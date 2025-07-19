@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poupança Solar</title>
+  <!-- Fuente Outfit -->
+  <link rel="stylesheet" href="poupanca.solar.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@558&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="logo-container">
+    <img class="logo-icon" src="C:\Users\Alumno\Downloads\images.jpg" alt="Logo de la empresa" class="logo-icon" />
+    <span class="logo-text">Poupança Solar</span>
+  </div>
+
+    
+    <!-- Aquí iría el resto del encabezado o menú -->
+  
+
+  <!-- BOTÓN MENÚ USUARIO ESQUINA SUPERIOR DERECHA -->
+  <button class="menu-usuario-btn" onclick="toggleUsuarioMenu()" aria-label="Menú de usuario">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+    </svg>
+  </button>
+
+  <!-- MENÚ DESPLEGABLE DEL USUARIO -->
+  <div class="menu-usuario-opciones" id="menuUsuarioOpciones">
+    <a href="#">Meu perfil</a>
+    <a href="#">Ajustes</a>
+    <a href="#">Contato</a>
+  </div>
+
+  <!-- CABECERA -->
+  <header id="inicio">
+    <!-- BUSCADOR ESTILO YOUTUBE -->
+<div class="buscador-youtube-container">
+  <input type="text" id="buscadorYoutubeInput" placeholder="Pesquisar em a página..." aria-label="Pesquisar em a página" />
+  <button class="buscador-youtube-btn" aria-label="Buscar">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="var(--primario)" viewBox="0 0 24 24" width="24px" height="24px">
+      <path d="M21 19l-5.59-5.59A7.93 7.93 0 0017 10a8 8 0 10-8 8 7.93 7.93 0 003.41-.59L19 21zM4 10a6 6 0 1112 0 6 6 0 01-12 0z"/>
+    </svg>
+  </button>
+</div>
+      <h1 class="textos-grandes">¡Bemvindo a Poupan&ccedila Solar!</h1>
+      <p>Solucoes sostenivels com Energía Solar</p>
+      
+<div> 
+    <section class="modelos-paneles">
+      <h2>Modelos disponivels</h2>
+      <div class="grid-modelos">
+        <div class="modelo">
+          <img src="https://www.efcsolar.com/wp-content/uploads/2021/12/paneles-solares-monocristalinos-placas-solares-monocristalinas.jpg" alt="Panel Modelo A" />
+          <p><strong>Modelo A</strong></p>
+        </div>
+        <div class="modelo">
+          <img src="https://www.prostarsolar.net/es/wp-content/uploads/2020/08/Paneles-solares-monocristalinos.jpg" alt="Panel Modelo B" />
+          <p><strong>Modelo B</strong></p>
+        </div>
+        <div class="modelo">
+          <img src="https://fiasa.com.ar/wp-content/uploads/2020/05/Paneles-solares.png" alt="Panel Modelo C" />
+          <p><strong>Modelo C</strong></p>
+        </div>
+        <div class="modelo">
+          <img src="https://news.agrofystatic.com/paneles-solares-campo-argentina-2022-201525.jpg?d=620x375" alt="Panel Modelo D" />
+          <p><strong>Modelo D</strong></p>
+          </div>
+          <div class="modelo">
+            <img src="https://www.greentecher.com/wp-content/uploads/2023/09/energia-solar-curso.jpeg" alt="Panel Modelo E"/>
+            <p><strong>Modelo E</strong></p>
+    </section>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Servicos</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <main>
+    <h1 class="textos-grandes">Sobre nuestros paneles</h1>
+    <p>Em Poupanca solar ofrezemos paineis solares de alta eficiencia para lares, lojas e industrias.</p>
+
+    <div>
+      <h2 class="titulosDescriptivos">Alta Eficiencia Monocristalino</h2>
+      <p class="parrafosDescriptivos">El Panel Solar A está diseñado para ofrecer un rendimiento óptimo incluso en condiciones de baja irradiancia. Su tecnología monocristalina garantiza una alta eficiencia energética, alcanzando hasta un 22% de conversión. Ideal para espacios reducidos donde se requiere el máximo aprovechamiento de la energía solar. Su marco de aluminio anodizado lo hace resistente a la corrosión y a condiciones climáticas extremas.</p>
+      <img id="imagenesIzquierda" src="https://www.prostarsolar.net/es/wp-content/uploads/2020/08/Paneles-solares-monocristalinos.jpg">
+    </div>
+
+
+      <div class="panel">
+        <img src="https://images.unsplash.com/photo-1603297631958-8259182a173b?auto=format&fit=crop&w=600&q=80" alt="Paneles solares portátiles" />
+        <div class="descripcion">
+          <h3>Sistemas portáteis</h3>
+          <p>Solucoes móviles e compatas para acampar, viajar ou usar em zonas rurais sem red elétrica.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button onclick="mostrarAlerta()">Solicitar servicos:</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Poupanca Solar | Energía limpa para um futuro melhor</p>
+  </footer>
+
+  <script>
+    function mostrarAlerta() {
+      alert("¡Gracias por tu interés! Pronto te contactaremos.");
+    }
+
+    // Toggle menú usuario
+    function toggleUsuarioMenu() {
+      const menu = document.getElementById("menuUsuarioOpciones");
+      menu.classList.toggle("show");
+    }
+
+    // Cerrar menú si clic fuera
+    document.addEventListener("click", (e) => {
+      const menu = document.getElementById("menuUsuarioOpciones");
+      const btn = document.querySelector(".menu-usuario-btn");
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+
+  <script>// Activar borde al hacer clic en el buscador
+    const buscadorContainer = document.querySelector('.buscador-youtube-container');
+    
+    document.addEventListener('click', (e) => {
+      // Si se hizo clic dentro del buscador, activarlo
+      if (buscadorContainer.contains(e.target)) {
+        buscadorContainer.classList.add('activo');
+      } else {
+        // Si se hizo clic fuera, quitar el borde activo
+        buscadorContainer.classList.remove('activo');
+      }
+    });</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+:root {
+    --primario: rgb#85d562; /* verde */
+    --secundario: #a2c5fa;
+    --fondo: #85d562;
+    --texto: white;
+  }
+
+  .logo {
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Ajustá el tamaño del logo a gusto */
+    height: auto;
+    border-radius: 60px; /* Opcional: bordes redondeados */
+  }
+
+  /* Buscador de la página */
+  .buscador-youtube-container {
+position: absolute;
+top: 20px;
+left: 25%;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+padding: 0 7px;
+overflow: none;
+width: 600px;
+transition: background-color 0.5s ease, border 0.3s ease;
+cursor: pointer;
+z-index: 1000;
+}
+
+.buscador-youtube-container.activo {
+border: 2px solid #000000; /* color del borde activo */
+background-color: white;
+}
+
+.buscador-youtube-container:hover {
+background-color: rgb(255, 255, 255);
+}
+
+.buscador-youtube-container:active {
+border: 1px solid rgb(0, 0, 0);
+}
+
+.buscador-youtube-container input {
+border: none;
+outline: none;
+font-family: 'Outfit', sans-serif;
+font-size: 16px;
+color: rgb(0, 0, 0);
+background: transparent;
+flex-grow: 1;
+padding: 6px 8px;
+}
+
+.buscador-youtube-btn {
+background: none;
+border: none;
+cursor: pointer;
+display: none; /* oculto por defecto */
+padding: 0 8px;
+flex-shrink: 0;
+}
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  /* Botón menú usuario esquina superior derecha */
+  .menu-usuario-btn {
+    position: fixed;
+    margin-top: 20px;
+    top: 0px;
+    right: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s ease, fill 0.3s ease;
+    box-shadow: none;
+  }
+  .menu-usuario-btn:hover {
+    transform: scale(1.12);
+  }
+  .menu-usuario-btn:hover svg path {
+    fill: white;
+    transition: fill 0.3s ease;
+  }
+
+  .menu-usuario-btn svg {
+    position: relative;
+    top: 1.5px;
+    right: 7px;
+    width: 25px;
+    height: 25px;
+    fill: #85d562;
+    transition: fill 0.3s ease;
+  }
+
+  /* Menú desplegable usuario */
+  .menu-usuario-opciones {
+    position: fixed;
+    top: 90px; /* debajo del botón */
+    right: 20px;
+    background-color:white;
+    color:#000000;
+    border:0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(127, 179, 213, 0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    min-width: 160px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+    margin-right: 5px;
+  }
+  .menu-usuario-opciones.show {
+    display: flex;
+    max-height: 500px;
+  }
+  .menu-usuario-opciones a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--primario);
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+    font-weight: 600;
+  }
+  .menu-usuario-opciones a:last-child {
+    border-bottom: none;
+  }
+  .menu-usuario-opciones a:hover {
+    background-color: rgb(196, 196, 196);
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(to right, var(--primario), var(--secundario));
+    padding: 80px 20px 80px;
+    color: var(--blanco);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .header-content {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    display: inline-block;
+    padding: 25px 35px;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: aparecer 0.8s ease-out;
+  }
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav {
+    background-color: var(--primario);
+    padding: 15px;
+    text-align: center;
+  }
+  nav a {
+    color: var(--blanco);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #e0e0e0;
+  }
+
+  main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    font-size: 40px;
+    color: white;
+  }
+  .galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .panel {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+  .panel img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+  .descripcion {
+    padding: 20px;
+    flex: 1;
+  }
+
+  /* Boton de suscribirse*/
+  button {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-top: 30px;
+  }
+  button:hover {
+    background-color: #5dade2;
+  }
+  footer {
+    background-color: var(--primario);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  /* Img de Paneles solares*/
+  .modelos-paneles {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .grid-modelos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modelo {
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .modelo:nth-child(2) { animation-delay: 0.2s; }
+  .modelo:nth-child(3) { animation-delay: 0.4s; }
+  .modelo:nth-child(4) { animation-delay: 0.6s; }
+  
+  .modelo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modelo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .modelo p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .logo-nombre {
+
+    border-radius: 5px;
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    left: 110px;
+    top: 40px;
+  }
+
+  /* Logo con animacion de apertura*/
+  .logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+  
+  .logo-icon {
+    background-color: white;
+    border-radius: 60px;
+    display: inline;
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* El texto está oculto por defecto */
+  .logo-text {
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    white-space: nowrap;
+  }
+  
+  /* Al pasar el cursor por la zona del logo, el texto aparece suavemente */
+  .logo-container:hover .logo-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Titulos y parrafos descriptivos con img al lado */
+  .titulosDescriptivos {
+    font-size: 30px;
+    margin-top: 10%;
+  }
+
+  .parrafosDescriptivos {
+    width: 40%;
+    margin-top:2%;
+  }
+
+  #imagenesIzquierda {
+    position: relative;
+    left: 46%;
+    bottom: 430px;
+    border-radius: 20px;
+    height: 400px;
+    width: 700px;
+  }
+
+  @media (width >= 500px){
+    body{
+      padding: 0;
+    }
+    .buscador-youtube-container{
+      margin: 0;
+      width: 675px;
+    }
+  }
